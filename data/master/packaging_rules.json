@@ -1,0 +1,178 @@
+{
+  "rules": [
+    {
+      "id": "rule_1",
+      "name": "CRT with compatible climate",
+      "conditions": {
+        "pharma_class": "crt",
+        "max_ambient_temp_c_expected": {"min": 15, "max": 25},
+        "duration_hours": {"max": 240}
+      },
+      "recommendation": {
+        "needs_packaging": false,
+        "packaging_type": "none",
+        "min_autonomy_hours": 0,
+        "justification": "CRT products are stable within the 15-25 °C range. Standard non-insulated packaging is sufficient when ambient conditions remain compatible throughout the route."
+      }
+    },
+    {
+      "id": "rule_2",
+      "name": "CRT with extreme climate, short duration",
+      "conditions": {
+        "pharma_class": "crt",
+        "max_ambient_temp_c_expected": {"min": -10, "max": 40},
+        "ambient_outside_class_range": true,
+        "duration_hours": {"max": 48}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 48,
+        "justification": "Per GDP guidelines, CRT products exposed to ambient temperatures outside 15-25 °C require basic passive insulation to prevent excursions, even on short routes."
+      }
+    },
+    {
+      "id": "rule_3",
+      "name": "CRT with extreme climate, long duration",
+      "conditions": {
+        "pharma_class": "crt",
+        "ambient_outside_class_range": true,
+        "duration_hours": {"min": 120}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "active",
+        "min_autonomy_hours": 144,
+        "justification": "Prolonged exposure (>120h) to ambient conditions outside the CRT range exceeds the protective capacity of passive systems. Active thermal management ensures stability for the full transit duration."
+      }
+    },
+    {
+      "id": "rule_4",
+      "name": "Cool, short duration, tropical climate",
+      "conditions": {
+        "pharma_class": "cool",
+        "max_ambient_temp_c_expected": {"min": 25, "max": 45},
+        "duration_hours": {"max": 48}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 48,
+        "justification": "Per GDP guidelines, Cool (2-8 °C) products in tropical climates for under 48h can be protected by qualified passive shippers with conditioned gel packs."
+      }
+    },
+    {
+      "id": "rule_5",
+      "name": "Cool, medium duration, warm climate",
+      "conditions": {
+        "pharma_class": "cool",
+        "max_ambient_temp_c_expected": {"min": 20, "max": 35},
+        "duration_hours": {"min": 48, "max": 72}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 96,
+        "justification": "Cool products on 48-72h routes in warm climates require premium passive shippers (PCM-based or VIP-insulated) qualified for the full transit window with a safety margin."
+      }
+    },
+    {
+      "id": "rule_6",
+      "name": "Cool, long duration, any climate",
+      "conditions": {
+        "pharma_class": "cool",
+        "duration_hours": {"min": 72, "max": 120}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "active",
+        "min_autonomy_hours": 120,
+        "justification": "Per GDP guidelines, Cool products require active thermal management for transits >72h to maintain the 2-8 °C range reliably across varying ambient conditions."
+      }
+    },
+    {
+      "id": "rule_7",
+      "name": "Cool, very long duration, planned recharges",
+      "conditions": {
+        "pharma_class": "cool",
+        "duration_hours": {"min": 120}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "active",
+        "min_autonomy_hours": 168,
+        "justification": "Transits exceeding 120h for Cool products require active containers with planned recharge or battery-swap points to guarantee uninterrupted temperature control end-to-end."
+      }
+    },
+    {
+      "id": "rule_8",
+      "name": "Frozen, short duration",
+      "conditions": {
+        "pharma_class": "frozen",
+        "duration_hours": {"max": 48}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 48,
+        "justification": "Frozen products on short routes can be protected by qualified passive shippers using dry ice as the refrigerant, provided sublimation rates are validated for the transit window."
+      }
+    },
+    {
+      "id": "rule_9",
+      "name": "Frozen, medium duration",
+      "conditions": {
+        "pharma_class": "frozen",
+        "duration_hours": {"min": 48, "max": 96}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 96,
+        "justification": "Frozen products on 48-96h routes require premium passive shippers with sufficient dry ice mass and high-performance insulation to maintain -20 to -15 °C without active intervention."
+      }
+    },
+    {
+      "id": "rule_10",
+      "name": "Frozen, long duration",
+      "conditions": {
+        "pharma_class": "frozen",
+        "duration_hours": {"min": 96}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "active",
+        "min_autonomy_hours": 120,
+        "justification": "Per GDP guidelines, Frozen products on transits exceeding 96h require active refrigerated containers, as dry ice sublimation makes passive solutions unreliable at this duration."
+      }
+    },
+    {
+      "id": "rule_11_ultracold_short",
+      "name": "UltraCold, very short duration",
+      "conditions": {
+        "pharma_class": "ultracold",
+        "duration_hours": {"max": 24}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "passive",
+        "min_autonomy_hours": 24,
+        "justification": "UltraCold products on very short transits (<24h) may be shipped in ultra-premium passive shippers (deep-dry-ice or LN2 dry-vapor dewars) validated to hold -80 to -60 °C for the full window."
+      }
+    },
+    {
+      "id": "rule_12_ultracold_standard",
+      "name": "UltraCold, standard duration",
+      "conditions": {
+        "pharma_class": "ultracold",
+        "duration_hours": {"min": 24}
+      },
+      "recommendation": {
+        "needs_packaging": true,
+        "packaging_type": "active",
+        "min_autonomy_hours": 120,
+        "justification": "Per GDP guidelines, UltraCold products on any transit beyond 24h require active containers with planned dry ice or liquid nitrogen replenishment to maintain -80 to -60 °C reliably."
+      }
+    }
+  ]
+}

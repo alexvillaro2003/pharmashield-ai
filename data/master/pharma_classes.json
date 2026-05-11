@@ -1,0 +1,68 @@
+{
+  "pharma_classes": [
+    {
+      "id": "crt",
+      "name": "Controlled Room Temperature (CRT)",
+      "description": "Stable at room temperature. Most robust class, suitable for the majority of oral solid dosage forms.",
+      "temp_min": 15,
+      "temp_max": 25,
+      "temp_tolerance_hours": 240,
+      "typical_products": [
+        "Aspirin",
+        "Ibuprofen tablets",
+        "Paracetamol",
+        "Most oral solid medications",
+        "Antibiotics in tablet form"
+      ],
+      "regulatory_basis": "USP <1150>, Ph. Eur. Storage conditions, WHO Model Guidance"
+    },
+    {
+      "id": "cool",
+      "name": "Cool / Refrigerated (2-8 °C)",
+      "description": "Refrigerated storage required. Critical for most biologics and common vaccines.",
+      "temp_min": 2,
+      "temp_max": 8,
+      "temp_tolerance_hours": 72,
+      "typical_products": [
+        "Insulin",
+        "Most common vaccines (influenza, MMR, hepatitis)",
+        "Monoclonal antibodies",
+        "Biologic therapies",
+        "Heat-labile injectables"
+      ],
+      "regulatory_basis": "WHO TRS 961 Annex 9, EU GDP Guidelines 2013/C 343/01, USP <1079>"
+    },
+    {
+      "id": "frozen",
+      "name": "Frozen (-20 to -15 °C)",
+      "description": "Frozen storage required. Very critical class for certain biologics and vaccines that lose potency above freezing.",
+      "temp_min": -20,
+      "temp_max": -15,
+      "temp_tolerance_hours": 24,
+      "typical_products": [
+        "Varicella vaccine",
+        "Zoster vaccine",
+        "Some plasma-derived products",
+        "Certain frozen biologics",
+        "Specific oncology preparations"
+      ],
+      "regulatory_basis": "WHO TRS 961 Annex 9, USP <1079>, IATA TCR Chapter 17"
+    },
+    {
+      "id": "ultracold",
+      "name": "Ultra-Cold (-80 to -60 °C)",
+      "description": "Deep-frozen storage required. Extremely critical for mRNA vaccines and advanced therapy medicinal products.",
+      "temp_min": -80,
+      "temp_max": -60,
+      "temp_tolerance_hours": 6,
+      "typical_products": [
+        "mRNA vaccines (Pfizer-BioNTech, Moderna)",
+        "Certain gene therapies",
+        "Advanced cell therapy products",
+        "Some clinical trial materials",
+        "Specific viral vector therapies"
+      ],
+      "regulatory_basis": "EU GDP Guidelines, WHO Immunization Supply Chain guidance, ISTA 7E"
+    }
+  ]
+}
