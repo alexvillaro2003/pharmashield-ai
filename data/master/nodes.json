@@ -1,0 +1,732 @@
+{
+  "nodes": [
+    {
+      "id": "antwerp",
+      "name": "Antwerp",
+      "country": "BE",
+      "city": "Antwerp",
+      "type": "seaport",
+      "coords": {
+        "lat": 51.3197,
+        "lon": 4.4003
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "BEANR"
+    },
+    {
+      "id": "rotterdam",
+      "name": "Rotterdam",
+      "country": "NL",
+      "city": "Rotterdam",
+      "type": "seaport",
+      "coords": {
+        "lat": 51.9525,
+        "lon": 4.05
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "NLRTM"
+    },
+    {
+      "id": "hamburg",
+      "name": "Hamburg",
+      "country": "DE",
+      "city": "Hamburg",
+      "type": "seaport",
+      "coords": {
+        "lat": 53.54,
+        "lon": 9.9
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "DEHAM"
+    },
+    {
+      "id": "le_havre",
+      "name": "Le Havre",
+      "country": "FR",
+      "city": "Le Havre",
+      "type": "seaport",
+      "coords": {
+        "lat": 49.4836,
+        "lon": 0.1078
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "FRLEH"
+    },
+    {
+      "id": "marseille",
+      "name": "Marseille-Fos",
+      "country": "FR",
+      "city": "Marseille",
+      "type": "seaport",
+      "coords": {
+        "lat": 43.413,
+        "lon": 4.8877
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "FRMRS"
+    },
+    {
+      "id": "frankfurt_airport",
+      "name": "Frankfurt Airport",
+      "country": "DE",
+      "city": "Frankfurt",
+      "type": "airport",
+      "coords": {
+        "lat": 50.0379,
+        "lon": 8.5622
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "FRA",
+      "un_locode": null
+    },
+    {
+      "id": "cologne_airport",
+      "name": "Cologne Bonn Airport",
+      "country": "DE",
+      "city": "Cologne",
+      "type": "airport",
+      "coords": {
+        "lat": 50.8659,
+        "lon": 7.1427
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "CGN",
+      "un_locode": null
+    },
+    {
+      "id": "schiphol",
+      "name": "Amsterdam Schiphol",
+      "country": "NL",
+      "city": "Amsterdam",
+      "type": "airport",
+      "coords": {
+        "lat": 52.3105,
+        "lon": 4.7683
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "AMS",
+      "un_locode": null
+    },
+    {
+      "id": "brussels",
+      "name": "Brussels",
+      "country": "BE",
+      "city": "Brussels",
+      "type": "inland_hub",
+      "coords": {
+        "lat": 50.8503,
+        "lon": 4.3517
+      },
+      "modes_in": [
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "road",
+        "rail"
+      ],
+      "iata_code": null,
+      "un_locode": null
+    },
+    {
+      "id": "madrid",
+      "name": "Madrid",
+      "country": "ES",
+      "city": "Madrid",
+      "type": "inland_hub",
+      "coords": {
+        "lat": 40.4168,
+        "lon": -3.7038
+      },
+      "modes_in": [
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "road",
+        "rail"
+      ],
+      "iata_code": null,
+      "un_locode": null
+    },
+    {
+      "id": "lyon",
+      "name": "Lyon",
+      "country": "FR",
+      "city": "Lyon",
+      "type": "inland_hub",
+      "coords": {
+        "lat": 45.764,
+        "lon": 4.8357
+      },
+      "modes_in": [
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "road",
+        "rail"
+      ],
+      "iata_code": null,
+      "un_locode": null
+    },
+    {
+      "id": "shanghai",
+      "name": "Shanghai",
+      "country": "CN",
+      "city": "Shanghai",
+      "type": "seaport",
+      "coords": {
+        "lat": 30.6275,
+        "lon": 122.0703
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "CNSHA"
+    },
+    {
+      "id": "hong_kong",
+      "name": "Hong Kong",
+      "country": "HK",
+      "city": "Hong Kong",
+      "type": "seaport",
+      "coords": {
+        "lat": 22.3382,
+        "lon": 114.1215
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "HKHKG"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "country": "SG",
+      "city": "Singapore",
+      "type": "seaport",
+      "coords": {
+        "lat": 1.2641,
+        "lon": 103.823
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "SGSIN"
+    },
+    {
+      "id": "busan",
+      "name": "Busan",
+      "country": "KR",
+      "city": "Busan",
+      "type": "seaport",
+      "coords": {
+        "lat": 35.0982,
+        "lon": 129.0358
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "KRPUS"
+    },
+    {
+      "id": "tokyo_narita",
+      "name": "Tokyo Narita",
+      "country": "JP",
+      "city": "Tokyo",
+      "type": "airport",
+      "coords": {
+        "lat": 35.7647,
+        "lon": 140.3863
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "NRT",
+      "un_locode": null
+    },
+    {
+      "id": "dubai_port",
+      "name": "Dubai (Jebel Ali)",
+      "country": "AE",
+      "city": "Dubai",
+      "type": "seaport",
+      "coords": {
+        "lat": 24.9839,
+        "lon": 55.0578
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "AEJEA"
+    },
+    {
+      "id": "dubai_airport",
+      "name": "Dubai International",
+      "country": "AE",
+      "city": "Dubai",
+      "type": "airport",
+      "coords": {
+        "lat": 25.2528,
+        "lon": 55.3644
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "DXB",
+      "un_locode": null
+    },
+    {
+      "id": "mumbai",
+      "name": "Mumbai (Nhava Sheva)",
+      "country": "IN",
+      "city": "Mumbai",
+      "type": "seaport",
+      "coords": {
+        "lat": 18.95,
+        "lon": 72.95
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "INNSA"
+    },
+    {
+      "id": "bangkok",
+      "name": "Bangkok Suvarnabhumi",
+      "country": "TH",
+      "city": "Bangkok",
+      "type": "airport",
+      "coords": {
+        "lat": 13.69,
+        "lon": 100.7501
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "BKK",
+      "un_locode": null
+    },
+    {
+      "id": "kaohsiung",
+      "name": "Kaohsiung",
+      "country": "TW",
+      "city": "Kaohsiung",
+      "type": "seaport",
+      "coords": {
+        "lat": 22.5843,
+        "lon": 120.3181
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "TWKHH"
+    },
+    {
+      "id": "port_klang",
+      "name": "Port Klang",
+      "country": "MY",
+      "city": "Port Klang",
+      "type": "seaport",
+      "coords": {
+        "lat": 2.9933,
+        "lon": 101.3122
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "MYPKG"
+    },
+    {
+      "id": "los_angeles",
+      "name": "Los Angeles",
+      "country": "US",
+      "city": "Los Angeles",
+      "type": "seaport",
+      "coords": {
+        "lat": 33.7406,
+        "lon": -118.2706
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "USLAX"
+    },
+    {
+      "id": "los_angeles_lax",
+      "name": "Los Angeles LAX",
+      "country": "US",
+      "city": "Los Angeles",
+      "type": "airport",
+      "coords": {
+        "lat": 33.9416,
+        "lon": -118.4085
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "LAX",
+      "un_locode": null
+    },
+    {
+      "id": "new_york",
+      "name": "New York / New Jersey",
+      "country": "US",
+      "city": "New York",
+      "type": "seaport",
+      "coords": {
+        "lat": 40.6677,
+        "lon": -74.1693
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "USNYC"
+    },
+    {
+      "id": "jfk_airport",
+      "name": "New York JFK",
+      "country": "US",
+      "city": "New York",
+      "type": "airport",
+      "coords": {
+        "lat": 40.6413,
+        "lon": -73.7781
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "JFK",
+      "un_locode": null
+    },
+    {
+      "id": "memphis",
+      "name": "Memphis",
+      "country": "US",
+      "city": "Memphis",
+      "type": "inland_hub",
+      "coords": {
+        "lat": 35.0424,
+        "lon": -89.9767
+      },
+      "modes_in": [
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "road",
+        "rail"
+      ],
+      "iata_code": null,
+      "un_locode": null
+    },
+    {
+      "id": "houston",
+      "name": "Houston",
+      "country": "US",
+      "city": "Houston",
+      "type": "seaport",
+      "coords": {
+        "lat": 29.7278,
+        "lon": -95.27
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "USHOU"
+    },
+    {
+      "id": "sao_paulo_gru",
+      "name": "Sao Paulo Guarulhos",
+      "country": "BR",
+      "city": "Sao Paulo",
+      "type": "airport",
+      "coords": {
+        "lat": -23.4356,
+        "lon": -46.4731
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "GRU",
+      "un_locode": null
+    },
+    {
+      "id": "doha_port",
+      "name": "Doha (Hamad Port)",
+      "country": "QA",
+      "city": "Doha",
+      "type": "seaport",
+      "coords": {
+        "lat": 25.0315,
+        "lon": 51.5835
+      },
+      "modes_in": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "modes_out": [
+        "road",
+        "rail",
+        "sea"
+      ],
+      "iata_code": null,
+      "un_locode": "QAHMD"
+    },
+    {
+      "id": "doha_airport",
+      "name": "Doha Hamad International",
+      "country": "QA",
+      "city": "Doha",
+      "type": "airport",
+      "coords": {
+        "lat": 25.2731,
+        "lon": 51.608
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "DOH",
+      "un_locode": null
+    },
+    {
+      "id": "sydney",
+      "name": "Sydney Kingsford Smith",
+      "country": "AU",
+      "city": "Sydney",
+      "type": "airport",
+      "coords": {
+        "lat": -33.9461,
+        "lon": 151.1772
+      },
+      "modes_in": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "modes_out": [
+        "air",
+        "road",
+        "rail"
+      ],
+      "iata_code": "SYD",
+      "un_locode": null
+    }
+  ]
+}
