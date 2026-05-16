@@ -4,86 +4,82 @@ st.set_page_config(
     page_title="PharmaShield AI",
     page_icon="🧊",
     layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-# ── Sidebar ──────────────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+    .css-1d391kg { padding-top: 1rem; }
+
+    [data-testid="metric-container"] {
+        background: #1a1d27;
+        border: 1px solid #2d3148;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .risk-low      { color: #22c55e; font-weight: 700; }
+    .risk-medium   { color: #f59e0b; font-weight: 700; }
+    .risk-high     { color: #ef4444; font-weight: 700; }
+    .risk-critical { color: #dc2626; font-weight: 700; font-size: 1.1em; }
+
+    .segment-card {
+        background: #1a1d27;
+        border: 1px solid #2d3148;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    footer { visibility: hidden; }
+
+    .main-header {
+        background: linear-gradient(135deg, #1a1d27 0%, #2d3148 100%);
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #7c6af7;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 with st.sidebar:
-    st.image(
-        "https://img.icons8.com/fluency/96/ice.png",
-        width=64,
-    )
-    st.markdown("## PharmaShield AI")
-    st.markdown(
-        "Cold-chain risk prediction for pharmaceutical shipments. "
-        "Use the pages below to plan routes, inspect model explanations, "
-        "evaluate performance, and manage batch jobs."
-    )
+    st.image("https://img.icons8.com/fluency/96/snowflake.png", width=60)
+    st.title("PharmaShield AI")
+    st.caption("Cold Chain Risk Intelligence")
     st.divider()
-    st.markdown("**Pages**")
-    st.markdown(
-        "- 📍 Route Planner\n"
-        "- 🔍 Explainability\n"
-        "- 📊 Model Evaluation\n"
-        "- 📁 Batch Upload\n"
-        "- 🗂️ History\n"
-        "- 🛡️ Ethics & GDPR"
-    )
+    st.markdown("""
+**Navigate:**
+- 📍 Route Planner
+- 🔍 Explainability
+- 📊 Model Evaluation
+- 🛡️ Ethics & GDPR
+""")
     st.divider()
-    st.caption("Thomas More University · AI Tools 2025–2026")
+    st.caption("Thomas More University · AI Tools 2025-26")
+    st.caption("Team: Alejandro · Juan · Álvaro · Mateo")
 
-# ── Main header ───────────────────────────────────────────────────────────────
-st.markdown("# 🧊 PharmaShield AI")
-st.markdown("### Cold Chain Risk Prediction for Pharmaceutical Shipments")
-st.divider()
+st.markdown("""
+<div class="main-header">
+    <h1>🧊 PharmaShield AI</h1>
+    <p style="color: #94a3b8; margin: 0;">
+        Cold Chain Risk Prediction for Pharmaceutical Shipments
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
-# ── Description ───────────────────────────────────────────────────────────────
-col_desc, col_how = st.columns([3, 2], gap="large")
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.markdown("### 📍 Route Planner")
+    st.write("Analyze any global pharmaceutical shipment route. Get real-time risk scores per segment and packaging recommendations.")
 
-with col_desc:
-    st.markdown("#### What is PharmaShield?")
-    st.markdown(
-        """
-        PharmaShield predicts the **probability of thermal excursion** along a
-        multimodal pharmaceutical shipment route (road → air → road) and
-        recommends the most appropriate packaging solution.
+with col2:
+    st.markdown("### 🤖 AI-Powered")
+    st.write("Random Forest model trained on 10,000 synthetic pharma shipments. Features include temperature buffer, autonomy gap, carrier reliability.")
 
-        It combines:
-        - **Machine learning** (XGBoost) trained on synthetic cold-chain data
-        - **Real-time weather signals** along the route
-        - **Geopolitical delay risk** from open event data (GDELT)
-        - **SHAP explainability** so every prediction is auditable
-        - **Interactive Folium maps** for visual route inspection
-        """
-    )
-
-with col_how:
-    st.markdown("#### How to use")
-    st.markdown(
-        """
-        **Step 1 — Define your route**
-        Go to *Route Planner*, enter origin, destination, transport modes,
-        and the drug's temperature requirements.
-
-        **Step 2 — Review the risk prediction**
-        The model returns a risk score and the top contributing factors,
-        visualised on an interactive map.
-
-        **Step 3 — Act on the recommendation**
-        PharmaShield suggests active or passive packaging and flags the
-        highest-risk leg of the journey.
-        """
-    )
+with col3:
+    st.markdown("### 🌍 Live Data")
+    st.write("Real-time weather via Open-Meteo. Geopolitical risk via GDELT. Both APIs cached to ensure fast response times.")
 
 st.divider()
-
-# ── Team credits ──────────────────────────────────────────────────────────────
-st.markdown("#### Team")
-c1, c2, c3, c4 = st.columns(4)
-for col, name in zip(
-    [c1, c2, c3, c4],
-    ["_(Name 1)_", "_(Name 2)_", "_(Name 3)_", "_(Name 4)_"],
-):
-    with col:
-        st.info(name)
-
-st.caption("Thomas More University · AI Tools 2025–2026 · Semester 2")
+st.info("👈 Use the sidebar to navigate between pages. Start with **Route Planner** to analyze a shipment.")
