@@ -1,0 +1,92 @@
+{
+  "model_name": "RandomForest",
+  "best_auc": 0.698,
+  "cv_auc_mean": 0.7046,
+  "cv_auc_std": 0.0058,
+  "feature_names": [
+    "distance_km",
+    "weight_kg",
+    "transit_duration_hours",
+    "num_handovers",
+    "max_ambient_temp_c_expected",
+    "min_ambient_temp_c_expected",
+    "geopolitical_risk_score",
+    "carrier_reliability_score",
+    "packaging_autonomy_hours",
+    "temp_buffer",
+    "autonomy_gap",
+    "is_intercontinental",
+    "pharma_class_id_enc",
+    "primary_transport_mode_enc",
+    "packaging_type_used_enc",
+    "season_enc"
+  ],
+  "label_encoders": {
+    "pharma_class_id": [
+      "cool",
+      "crt",
+      "frozen",
+      "ultracold"
+    ],
+    "primary_transport_mode": [
+      "air",
+      "rail",
+      "road",
+      "sea"
+    ],
+    "packaging_type_used": [
+      "active",
+      "none",
+      "passive"
+    ],
+    "season": [
+      "Autumn",
+      "Spring",
+      "Summer",
+      "Winter"
+    ]
+  },
+  "feature_engineering": {
+    "pharma_temp_ranges": {
+      "crt": {
+        "temp_min": 15,
+        "temp_max": 25
+      },
+      "cool": {
+        "temp_min": 2,
+        "temp_max": 8
+      },
+      "frozen": {
+        "temp_min": -20,
+        "temp_max": -15
+      },
+      "ultracold": {
+        "temp_min": -80,
+        "temp_max": -60
+      }
+    }
+  },
+  "training_date": "2026-05-16",
+  "n_train": 8000,
+  "n_test": 2000,
+  "excursion_rate_train": 0.2676,
+  "excursion_rate_test": 0.2675,
+  "feature_importances": {
+    "distance_km": 0.06308,
+    "weight_kg": 0.071813,
+    "transit_duration_hours": 0.073811,
+    "num_handovers": 0.02394,
+    "max_ambient_temp_c_expected": 0.068914,
+    "min_ambient_temp_c_expected": 0.070326,
+    "geopolitical_risk_score": 0.075075,
+    "carrier_reliability_score": 0.096212,
+    "packaging_autonomy_hours": 0.081668,
+    "temp_buffer": 0.160344,
+    "autonomy_gap": 0.072852,
+    "is_intercontinental": 0.003641,
+    "pharma_class_id_enc": 0.10887,
+    "primary_transport_mode_enc": 0.007487,
+    "packaging_type_used_enc": 0.002326,
+    "season_enc": 0.01964
+  }
+}
