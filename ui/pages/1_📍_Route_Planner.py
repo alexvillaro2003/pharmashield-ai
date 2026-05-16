@@ -128,9 +128,39 @@ def _build_map(assessment: ShipmentRiskAssessment) -> folium.Map:
 def _render_results(assessment: ShipmentRiskAssessment, col_map) -> None:
     route = assessment.route
 
+    RISK_CONFIG = {
+        'Low':      {'color': '#22c55e', 'emoji': '🟢',
+                     'message': 'Low risk — standard procedures apply.'},
+        'Medium':   {'color': '#f59e0b', 'emoji': '🟡',
+                     'message': 'Medium risk — monitor closely and verify packaging autonomy.'},
+        'High':     {'color': '#ef4444', 'emoji': '🔴',
+                     'message': 'High risk — consider rerouting or upgrading packaging.'},
+        'Critical': {'color': '#dc2626', 'emoji': '🚨',
+                     'message': 'Critical risk — escalate to supply chain manager immediately.'},
+    }
+    risk_score = assessment.aggregated_risk_score
+    risk_label = assessment.aggregated_risk_label
+    cfg = RISK_CONFIG.get(risk_label, RISK_CONFIG['Medium'])
+
     with col_map:
         st_folium(_build_map(assessment), width=None, height=450, returned_objects=[])
         st.divider()
+
+        st.markdown(
+            f"""
+            <div style="background:{cfg['color']}22;border:2px solid {cfg['color']};
+                        border-radius:12px;padding:1rem 1.5rem;margin-bottom:1rem;">
+                <span style="font-size:1.5rem">{cfg['emoji']}</span>
+                <span style="font-size:1.3rem;font-weight:700;
+                             color:{cfg['color']};margin-left:0.5rem;">
+                    {risk_label} Risk — {risk_score}/100
+                </span>
+                <br>
+                <span style="color:#94a3b8;font-size:0.9rem">{cfg['message']}</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
         mcol1, mcol2, mcol3, mcol4 = st.columns(4)
         mcol1.metric(
@@ -280,18 +310,37 @@ if 'last_assessment' not in st.session_state:
     st.session_state.last_assessment = None
 
 if analyze_btn and origin_id != destination_id:
-    with st.spinner("🔄 Analyzing route... fetching weather & geopolitical data..."):
-        try:
-            st.session_state.last_assessment = assess_shipment(
-                origin_id=origin_id,
-                destination_id=destination_id,
-                pharma_class=pharma_id,
-                weight_kg=weight_kg,
-                carrier_reliability=carrier_reliability,
-            )
-        except Exception as exc:
-            st.error(f"Error analyzing shipment: {exc}")
-            st.stop()
+    progress_bar = st.progress(0)
+    status_text  = st.empty()
+
+    status_text.text("🗺️ Planning route...")
+    progress_bar.progress(20)
+
+    try:
+        status_text.text("🌤️ Fetching weather & geopolitical data...")
+        progress_bar.progress(50)
+
+        st.session_state.last_assessment = assess_shipment(
+            origin_id=origin_id,
+            destination_id=destination_id,
+            pharma_class=pharma_id,
+            weight_kg=weight_kg,
+            carrier_reliability=carrier_reliability,
+        )
+
+        progress_bar.progress(100)
+        status_text.text("✅ Analysis complete!")
+
+        import time
+        time.sleep(0.5)
+        progress_bar.empty()
+        status_text.empty()
+
+    except Exception as exc:
+        progress_bar.empty()
+        status_text.empty()
+        st.error(f"❌ Error analyzing shipment: {exc}")
+        st.stop()
 
 if st.session_state.last_assessment:
     _render_results(st.session_state.last_assessment, col_map)
