@@ -27,12 +27,16 @@ COUNTRY_NAMES = {
 
 
 def _score_from_count(count: int) -> float:
-    if count == 0:   return 1.0
-    if count <= 5:   return 2.5
-    if count <= 10:  return 4.5
-    if count <= 15:  return 6.5
-    if count <= 20:  return 8.0
-    return 9.5
+    # Recalibrated: high English-language media coverage (EU HQ countries)
+    # was inflating scores for stable countries like Belgium, Germany, Netherlands.
+    # 25 articles for BE/NL/DE is normal background noise, not geopolitical risk.
+    if count == 0:   return 1.0   # no data → conservatively low
+    if count <= 10:  return 1.5   # normal coverage for stable countries
+    if count <= 20:  return 2.5   # elevated coverage, no alarm
+    if count <= 30:  return 4.0   # moderate signal
+    if count <= 40:  return 6.0   # high signal
+    if count <= 50:  return 7.5   # very high signal
+    return 9.0                    # extreme cases only (>50 articles)
 
 
 def _label_from_score(score: float) -> str:
@@ -84,7 +88,7 @@ def get_geopolitical_risk(country_code: str) -> dict:
         cached.pop('_ts', None)
         return cached
 
-    query = f"{country_name.replace(' ', '+')}+logistics+supply+chain"
+    query = f"{country_name.replace(' ', '+')}+pharma+supply+chain+disruption+risk"
     url = (
         f"https://api.gdeltproject.org/api/v2/doc/doc"
         f"?query={query}&mode=artlist&maxrecords=25"
